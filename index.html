@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSmart Waste Solutions - Gestión Inteligente de Residuos</title>
+    
+    <!-- Angular Material CSS -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.css">
+    
+    <!-- Iconos de Material -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Nuestro CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="EcoSmartApp" ng-cloak ng-controller="AppCtrl">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="material-icons">recycling</i>
+                    <span>EcoSmart Waste Solutions</span>
+                </div>
+                <nav>
+                    <button class="mobile-menu-btn" id="menuBtn" aria-label="Menú móvil">
+                        <i class="material-icons">menu</i>
+                    </button>
+                    <ul id="navMenu">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#soluciones">Soluciones</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Revolucionamos la Gestión de Residuos Urbanos</h1>
+            <p>Optimizamos la recolección de basura mediante sensores IoT y algoritmos inteligentes, reduciendo costos operativos y emisiones de CO₂.</p>
+            <button class="cta-button" mat-raised-button color="accent">Solicitar Demo</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="soluciones">
+        <div class="container">
+            <h2 class="section-title">Nuestras Soluciones Inteligentes</h2>
+            <div class="features-grid">
+                <mat-card class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">sensors</i>
+                    </div>
+                    <mat-card-title>Tachos Inteligentes</mat-card-title>
+                    <mat-card-content>
+                        <p>Contenedores equipados con sensores IoT que monitorean niveles de llenado en tiempo real y envían datos a nuestra plataforma central.</p>
+                    </mat-card-content>
+                </mat-card>
+                
+                <mat-card class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">analytics</i>
+                    </div>
+                    <mat-card-title>Plataforma de Análisis</mat-card-title>
+                    <mat-card-content>
+                        <p>Software especializado que procesa datos de los sensores y genera reportes detallados sobre patrones de generación de residuos.</p>
+                    </mat-card-content>
+                </mat-card>
+                
+                <mat-card class="feature-card">
+                    <div class="feature-icon">
+                        <i class="material-icons">route</i>
+                    </div>
+                    <mat-card-title>Optimización de Rutas</mat-card-title>
+                    <mat-card-content>
+                        <p>Algoritmos inteligentes que planifican las rutas más eficientes para los camiones recolectores, reduciendo tiempos y emisiones.</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Beneficios para Municipios y Distritos</h2>
+            <div class="benefits-content">
+                <div class="benefit-item">
+                    <i class="material-icons">savings</i>
+                    <h3>Hasta 40% de ahorro en costos operativos</h3>
+                    <p>Reducción significativa en combustible, mantenimiento y horas de trabajo.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="material-icons">eco</i>
+                    <h3>Reducción de emisiones de CO₂</h3>
+                    <p>Menos recorridos innecesarios significa menor huella de carbono para tu ciudad.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="material-icons">thumb_up</i>
+                    <h3>Mejora en la satisfacción ciudadana</h3>
+                    <p>Evita contenedores desbordados y mejora la limpieza de los espacios públicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="equipo">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo de Expertos</h2>
+            <p class="section-subtitle">Conoce a los profesionales que harán de tu ciudad un lugar más limpio y sostenible</p>
+            
+            <!-- Slider main container -->
+            <div class="swiper teamSwiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide" ng-repeat="member in teamMembers">
+                        <mat-card class="team-card">
+                            <div class="team-image">
+                                <img ng-src="{{member.image}}" alt="{{member.name}}">
+                                <div class="team-social">
+                                    <a ng-href="{{member.social.linkedin}}" target="_blank"><i class="material-icons">link</i></a>
+                                    <a ng-href="mailto:{{member.social.email}}"><i class="material-icons">email</i></a>
+                                </div>
+                            </div>
+                            <mat-card-content>
+                                <h3>{{member.name}}</h3>
+                                <p class="team-role">{{member.role}}</p>
+                                <p>{{member.description}}</p>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <mat-card class="testimonial-card">
+                <mat-card-content>
+                    <p class="testimonial-content">"EcoSmart transformó por completo nuestra gestión de residuos. En solo 6 meses, redujimos nuestros costos de recolección en un 35% y las quejas por contenedores llenos disminuyeron en un 80%."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div>
+                            <strong>Carlos Rodríguez</strong>
+                            <p>Director de Servicios Urbanos, Municipalidad de VerdeValle</p>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">¿Interesado en implementar nuestra solución inteligente en tu municipio? Déjanos tus datos y te contactaremos.</p>
+            <mat-card class="contact-form">
+                <mat-card-content>
+                    <form id="contactForm" name="contactForm" ng-submit="submitForm()">
+                        <mat-form-field class="form-full-width" appearance="fill">
+                            <mat-label>Nombre completo</mat-label>
+                            <input matInput type="text" id="name" name="name" ng-model="user.name" required>
+                            <mat-icon matSuffix>person</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="form-full-width" appearance="fill">
+                            <mat-label>Municipalidad o organización</mat-label>
+                            <input matInput type="text" id="organization" name="organization" ng-model="user.organization" required>
+                            <mat-icon matSuffix">business</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="form-full-width" appearance="fill">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="email" id="email" name="email" ng-model="user.email" required>
+                            <mat-icon matSuffix">email</mat-icon>
+                        </mat-form-field>
+
+                        <mat-form-field class="form-full-width" appearance="fill">
+                            <mat-label>Tu mensaje</mat-label>
+                            <textarea matInput id="message" name="message" rows="5" ng-model="user.message" required></textarea>
+                        </mat-form-field>
+
+                        <button mat-raised-button color="primary" type="submit" class="submit-button">Solicitar información</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EcoSmart Waste Solutions</h3>
+                    <p>Tecnología inteligente para una gestión de residuos más eficiente y sostenible.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="material-icons">email</i> info@ecosmartwaste.com</p>
+                    <p><i class="material-icons">phone</i> +51 912 345 678</p>
+                    <p><i class="material-icons">location_on</i> Lima, Perú</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <p>
+                        <a href="#"><i class="material-icons">link</i> LinkedIn</a> | 
+                        <a href="#"><i class="material-icons">link</i> Twitter</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EcoSmart Waste Solutions. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Angular Material JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.2/angular-material.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Nuestro JavaScript personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
