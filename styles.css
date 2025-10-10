@@ -59,15 +59,25 @@ header {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
     display: flex;
     align-items: center;
 }
 
-.logo i {
-    margin-right: 8px;
-    color: var(--accent-color);
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 nav {
@@ -495,6 +505,10 @@ footer {
     
     .header-actions {
         gap: 10px;
+    }
+    
+    .logo-image {
+        height: 40px;
     }
     
     .login-btn span {
