@@ -52,6 +52,12 @@ header {
     gap: 30px;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -73,7 +79,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: auto;
 }
 
 .language-btn {
@@ -98,6 +103,29 @@ nav {
 .language-divider {
     color: rgba(255, 255, 255, 0.5);
     font-weight: 300;
+}
+
+.login-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.login-btn i {
+    font-size: 18px;
 }
 
 nav ul {
@@ -463,6 +491,18 @@ footer {
     .header-right {
         width: 100%;
         justify-content: space-between;
+    }
+    
+    .header-actions {
+        gap: 10px;
+    }
+    
+    .login-btn span {
+        display: none;
+    }
+    
+    .login-btn {
+        padding: 8px;
     }
     
     nav ul {
